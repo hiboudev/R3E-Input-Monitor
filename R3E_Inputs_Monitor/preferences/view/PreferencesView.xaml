@@ -1,0 +1,39 @@
+﻿<view:ModalWindow
+    x:Class="R3E_Inputs_Monitor.preferences.view.PreferencesView"
+    xmlns:view="clr-namespace:da2mvc.framework.application.view;assembly=da2MVC_wpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:R3E_Inputs_Monitor.preferences.view"
+        mc:Ignorable="d"
+        Title="Preferences" Height="auto" Width="300" SizeToContent="Height"
+    >
+
+    <StackPanel>
+        <Label FontWeight="DemiBold">Show:</Label>
+        <StackPanel>
+            <CheckBox Name="showClutch">Clutch pedal</CheckBox>
+            <CheckBox Name="showBrake">Brake pedal</CheckBox>
+            <CheckBox Name="showThrottle">Throttle pedal</CheckBox>
+            <CheckBox Name="showWheel">Wheel</CheckBox>
+        </StackPanel>
+
+        <Label FontWeight="DemiBold">Gauges thickness:</Label>
+        <DockPanel>
+            <TextBox Text="{Binding ElementName=gaugeThickness, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider Name="gaugeThickness" Minimum="1" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" />
+        </DockPanel>
+
+        <Label FontWeight="DemiBold">Wheel position:</Label>
+        <ComboBox Name="wheelPosition" />
+
+        <Label FontWeight="DemiBold">Wheel size:</Label>
+        <DockPanel>
+            <TextBox Text="{Binding ElementName=wheelSize, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
+            <Slider Name="wheelSize" Minimum="20" Maximum="1163" TickFrequency="1" IsSnapToTickEnabled="True" />
+        </DockPanel>
+        <Button Name="okButton" Margin="0,20,0,0" Padding="6,0,6,0" HorizontalAlignment="Right">Save preferences</Button>
+    </StackPanel>
+    
+</view:ModalWindow>
