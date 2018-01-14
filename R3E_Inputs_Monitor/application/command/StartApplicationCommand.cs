@@ -1,5 +1,6 @@
 ﻿using da2mvc.core.command;
 using da2mvc.core.injection;
+using R3E_Inputs_Monitor.preferences.command;
 using R3E_Inputs_Monitor.r3e.command;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace R3E_Inputs_Monitor.application.command
     {
         public void Execute()
         {
+            Injector.ExecuteCommand<LoadPreferencesCommand>();
             Injector.ExecuteCommand<StartSocketCommand>();
         }
     }

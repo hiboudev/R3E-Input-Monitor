@@ -33,7 +33,7 @@ namespace R3E_Inputs_Monitor
             
             Injector.ExecuteCommand<StartApplicationCommand>();
 
-            MouseLeftButtonDown += LeftButtonHandler; 
+            MouseLeftButtonDown += LeftButtonHandler;
         }
 
         private void LeftButtonHandler(object sender, MouseButtonEventArgs e)

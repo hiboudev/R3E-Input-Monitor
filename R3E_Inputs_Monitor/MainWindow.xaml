@@ -7,18 +7,18 @@
         xmlns:display="clr-namespace:R3E_Inputs_Monitor.display"
         xmlns:view="clr-namespace:R3E_Inputs_Monitor.application.view"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="auto" SizeToContent="Width" MinWidth="4" MinHeight="30"
-        WindowStyle="None" AllowsTransparency="True"
+        Title="MainWindow" Height="300" Width="120" MinHeight="20" MinWidth="20"
+        WindowStyle="None"
         >
 
-    <!--AllowsTransparency="True" WindowStyle="None"-->
+    <!--AllowsTransparency="True"  -->
     
     <Window.Background>
         <SolidColorBrush Opacity="0.5" Color="White"/>
     </Window.Background>
 
     <DockPanel>
-        <view:AppView ViewType="{x:Type display:DisplayView}" Width="auto" />
+        <view:AppView ViewType="{x:Type display:DisplayView}" x:Name="view" />
     </DockPanel>
     
 </Window>

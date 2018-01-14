@@ -67,6 +67,7 @@
     <Compile Include="display\DisplayMediator.cs" />
     <Compile Include="display\DisplayView.cs" />
     <Compile Include="Mappings.cs" />
+    <Compile Include="preferences\command\LoadPreferencesCommand.cs" />
     <Compile Include="preferences\command\OpenPreferencesCommand.cs" />
     <Compile Include="preferences\command\UpdatePreferencesCommand.cs" />
     <Compile Include="preferences\events\PreferencesChangeEventArgs.cs" />
@@ -131,6 +132,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_graphical_assets\wheel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

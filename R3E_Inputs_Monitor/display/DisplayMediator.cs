@@ -1,4 +1,6 @@
-﻿using da2mvc.core.view;
+﻿using da2mvc.core.events;
+using da2mvc.core.view;
+using R3E_Inputs_Monitor.preferences.command;
 using R3E_Inputs_Monitor.r3e.events;
 using R3E_Inputs_Monitor.r3e.socket;
 using System;
@@ -14,6 +16,12 @@ namespace R3E_Inputs_Monitor.display
         public DisplayMediator()
         {
             HandleEvent<R3eApiSocket, SocketEventArgs>(R3eApiSocket.EVENT_DATA_UPDATED, SocketDataUpdated);
+            HandleEvent<UpdatePreferencesCommand, BaseEventArgs>(UpdatePreferencesCommand.EVENT_PREFERENCES_UPDATED, OnPreferencesUpdated);
+        }
+
+        private void OnPreferencesUpdated(BaseEventArgs args)
+        {
+            View.InvalidateVisual();
         }
 
         private void SocketDataUpdated(SocketEventArgs args)

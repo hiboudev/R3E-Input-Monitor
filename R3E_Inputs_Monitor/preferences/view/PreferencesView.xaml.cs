@@ -34,25 +34,25 @@ namespace R3E_Inputs_Monitor.preferences.view
 
         private void InitializeUI(PreferencesModel model)
         {
-            foreach (WheelPositionType enumValue in Enum.GetValues(typeof(WheelPositionType)))
-            {
-                ComboBoxItem item = new ComboBoxItem()
-                {
-                    Content = Enum.GetName(typeof(WheelPositionType), enumValue),
-                    Tag = enumValue,
-                    IsSelected = model.WheelPosition == enumValue,
-                };
-                wheelPosition.Items.Add(item);
-            }
-            wheelPosition.UpdateLayout();
+            //foreach (WheelPositionType enumValue in Enum.GetValues(typeof(WheelPositionType)))
+            //{
+            //    ComboBoxItem item = new ComboBoxItem()
+            //    {
+            //        Content = Enum.GetName(typeof(WheelPositionType), enumValue),
+            //        Tag = enumValue,
+            //        IsSelected = model.WheelPosition == enumValue,
+            //    };
+            //    wheelPosition.Items.Add(item);
+            //}
+            //wheelPosition.UpdateLayout();
             showClutch.IsChecked = model.ShowGauges.HasFlag(GaugeType.CLUTCH);
             showBrake.IsChecked = model.ShowGauges.HasFlag(GaugeType.BRAKE);
             showThrottle.IsChecked = model.ShowGauges.HasFlag(GaugeType.THROTTLE);
 
-            showWheel.IsChecked = model.ShowWheel;
+            //showWheel.IsChecked = model.ShowWheel;
 
-            gaugeThickness.Value = model.GaugeThickness;
-            wheelSize.Value = model.WheelSize;
+            //gaugeThickness.Value = model.GaugeThickness;
+            //wheelSize.Value = model.WheelSize;
 
             okButton.Click += OkClickHandler;
         }
@@ -63,9 +63,9 @@ namespace R3E_Inputs_Monitor.preferences.view
                 | (showBrake.IsChecked == true ? GaugeType.BRAKE : 0)
                 | (showThrottle.IsChecked == true ? GaugeType.THROTTLE : 0);
 
-            WheelPositionType wheelPositionType = (WheelPositionType)(wheelPosition.SelectedItem as ComboBoxItem).Tag;
+            //WheelPositionType wheelPositionType = (WheelPositionType)(wheelPosition.SelectedItem as ComboBoxItem).Tag;
 
-            var args = new PreferencesChangeEventArgs(EVENT_PREFERENCES_CHANGED, (int)gaugeThickness.Value, gauges, showWheel.IsChecked == true, wheelPositionType, (int)wheelSize.Value);
+            var args = new PreferencesChangeEventArgs(EVENT_PREFERENCES_CHANGED,gauges/*, showWheel.IsChecked == true, wheelPositionType, (int)wheelSize.Value*/);
 
             DispatchEvent(args);
             DialogResult = true;
