@@ -53,10 +53,12 @@ namespace R3E_Inputs_Monitor
 
         private void KeyDownHandler(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.C && !e.IsRepeat && Keyboard.Modifiers == 0)
+            if (e.Key == Key.C && !e.IsRepeat && Keyboard.Modifiers == 0)
             {
                 DispatchEvent(new BaseEventArgs(EVENT_OPEN_PREFERENCES));
             }
+            else if (e.Key == Key.Escape)
+                Application.Current.Shutdown();
         }
     }
 }
