@@ -37,6 +37,7 @@ namespace R3E_Inputs_Monitor.preferences.view
             showClutch.IsChecked = model.ShowGauges.HasFlag(GaugeType.CLUTCH);
             showBrake.IsChecked = model.ShowGauges.HasFlag(GaugeType.BRAKE);
             showThrottle.IsChecked = model.ShowGauges.HasFlag(GaugeType.THROTTLE);
+            opacity.Value = model.Opacity;
             alwaysOnTop.IsChecked = model.AlwaysOnTop;
 
             okButton.Click += OkClickHandler;
@@ -48,7 +49,7 @@ namespace R3E_Inputs_Monitor.preferences.view
                 | (showBrake.IsChecked == true ? GaugeType.BRAKE : 0)
                 | (showThrottle.IsChecked == true ? GaugeType.THROTTLE : 0);
 
-            var args = new PreferencesChangeEventArgs(EVENT_PREFERENCES_CHANGED, gauges, alwaysOnTop.IsChecked == true);
+            var args = new PreferencesChangeEventArgs(EVENT_PREFERENCES_CHANGED, gauges, alwaysOnTop.IsChecked == true, (byte)opacity.Value);
 
             DispatchEvent(args);
             DialogResult = true;

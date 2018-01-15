@@ -37,6 +37,20 @@ namespace R3E_Inputs_Monitor
             Injector.ExecuteCommand<StartApplicationCommand>();
 
             MouseLeftButtonDown += LeftButtonHandler;
+
+            // Don't draw the grip if window is not focused.
+            Activated += ActivatedHandler;
+            Deactivated += DeactivatedHandler;
+        }
+
+        private void ActivatedHandler(object sender, EventArgs e)
+        {
+            ResizeMode = ResizeMode.CanResizeWithGrip;
+        }
+
+        private void DeactivatedHandler(object sender, EventArgs e)
+        {
+            ResizeMode = ResizeMode.CanResize;
         }
 
         private void LeftButtonHandler(object sender, MouseButtonEventArgs e)

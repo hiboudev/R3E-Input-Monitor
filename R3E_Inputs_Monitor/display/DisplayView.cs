@@ -65,7 +65,7 @@ namespace R3E_Inputs_Monitor.display
 
             double gaugeThickness = numGauges == 0 ? numGauges : RenderSize.Width / numGauges;
 
-            drawingContext.DrawRectangle(new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)), null, new Rect(0, 0, RenderSize.Width, RenderSize.Height));
+            drawingContext.DrawRectangle(new SolidColorBrush(Color.FromArgb(preferences.Opacity, 0, 0, 0)), null, new Rect(0, 0, RenderSize.Width, RenderSize.Height));
             
             if (preferences.ShowGauges.HasFlag(GaugeType.CLUTCH))
             {

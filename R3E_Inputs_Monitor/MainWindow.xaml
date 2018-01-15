@@ -8,14 +8,14 @@
         xmlns:view="clr-namespace:R3E_Inputs_Monitor.application.view"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="120" MinHeight="20" MinWidth="20"
-        WindowStyle="None"
+        WindowStyle="None" AllowsTransparency="True"
         >
 
-    <!--AllowsTransparency="True"  -->
-    
-    <!--Window.Background>
-        <SolidColorBrush Opacity="0.5" Color="White"/>
-    </-->
+    <!-- AllowsTransparency="True" -->
+
+    <Window.Background>
+        <SolidColorBrush Opacity="0" Color="Black"/>
+    </Window.Background>
 
     <DockPanel>
         <view:AppView ViewType="{x:Type display:DisplayView}" x:Name="view" />

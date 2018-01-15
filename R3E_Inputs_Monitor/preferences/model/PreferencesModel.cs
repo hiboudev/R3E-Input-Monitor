@@ -10,5 +10,6 @@ namespace R3E_Inputs_Monitor.preferences.model
     {
         public GaugeType ShowGauges { get; set; } = GaugeType.CLUTCH | GaugeType.BRAKE | GaugeType.THROTTLE;
         public bool AlwaysOnTop { get; set; } = false;
+        public byte Opacity { get; set; } = 255;
     }
 }

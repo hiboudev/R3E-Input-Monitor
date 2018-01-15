@@ -27,8 +27,12 @@ namespace R3E_Inputs_Monitor.preferences.command
         {
             preferences.ShowGauges = args.ShowGauges;
             preferences.AlwaysOnTop = args.AlwaysOnTop;
+            preferences.Opacity = args.Opacity;
+
             Properties.Settings.Default.showGauges = (int)args.ShowGauges;
             Properties.Settings.Default.alwaysOnTop = args.AlwaysOnTop;
+            Properties.Settings.Default.opacity = args.Opacity;
+
             Properties.Settings.Default.Save();
 
             DispatchEvent(new PreferencesModelEventArgs(EVENT_PREFERENCES_UPDATED, preferences));

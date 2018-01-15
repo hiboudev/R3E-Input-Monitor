@@ -14,6 +14,7 @@ namespace R3E_Inputs_Monitor
         public MainWindowMediator()
         {
             HandleEvent<UpdatePreferencesCommand, PreferencesModelEventArgs>(UpdatePreferencesCommand.EVENT_PREFERENCES_UPDATED, OnPreferencesChanged);
+            HandleEvent<LoadPreferencesCommand, PreferencesModelEventArgs>(LoadPreferencesCommand.EVENT_PREFERENCES_LOADED, OnPreferencesChanged);
         }
 
         private void OnPreferencesChanged(PreferencesModelEventArgs args)

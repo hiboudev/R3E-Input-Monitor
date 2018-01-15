@@ -46,5 +46,17 @@ namespace R3E_Inputs_Monitor.Properties {
                 this["alwaysOnTop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255")]
+        public byte opacity {
+            get {
+                return ((byte)(this["opacity"]));
+            }
+            set {
+                this["opacity"] = value;
+            }
+        }
     }
 }

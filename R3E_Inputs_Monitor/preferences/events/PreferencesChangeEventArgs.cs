@@ -10,13 +10,15 @@ namespace R3E_Inputs_Monitor.preferences.events
 {
     class PreferencesChangeEventArgs : BaseEventArgs
     {
-        public PreferencesChangeEventArgs(int eventId, GaugeType showGauges, bool alwaysOnTop) : base(eventId)
+        public PreferencesChangeEventArgs(int eventId, GaugeType showGauges, bool alwaysOnTop, byte opacity) : base(eventId)
         {
             ShowGauges = showGauges;
             AlwaysOnTop = alwaysOnTop;
+            Opacity = opacity;
         }
 
         public GaugeType ShowGauges { get; }
         public bool AlwaysOnTop { get; }
+        public byte Opacity { get; }
     }
 }

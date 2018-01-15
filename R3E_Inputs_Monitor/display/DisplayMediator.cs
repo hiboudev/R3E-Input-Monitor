@@ -17,6 +17,7 @@ namespace R3E_Inputs_Monitor.display
         {
             HandleEvent<R3eApiSocket, SocketEventArgs>(R3eApiSocket.EVENT_DATA_UPDATED, SocketDataUpdated);
             HandleEvent<UpdatePreferencesCommand, BaseEventArgs>(UpdatePreferencesCommand.EVENT_PREFERENCES_UPDATED, OnPreferencesUpdated);
+            HandleEvent<LoadPreferencesCommand, BaseEventArgs>(LoadPreferencesCommand.EVENT_PREFERENCES_LOADED, OnPreferencesUpdated);
         }
 
         private void OnPreferencesUpdated(BaseEventArgs args)
