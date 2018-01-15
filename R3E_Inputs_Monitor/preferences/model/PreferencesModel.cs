@@ -8,16 +8,7 @@ namespace R3E_Inputs_Monitor.preferences.model
 {
     public class PreferencesModel
     {
-        //private int gaugeThickness = 10;
-        private GaugeType showGauges = GaugeType.CLUTCH | GaugeType.BRAKE | GaugeType.THROTTLE;
-        //private bool showWheel = true;
-        //private WheelPositionType wheelPosition = WheelPositionType.CENTER;
-        //private int wheelSize = 60;
-
-        //public int GaugeThickness { get => gaugeThickness; set => gaugeThickness = value; }
-        public GaugeType ShowGauges { get => showGauges; set => showGauges = value; }
-        //public bool ShowWheel { get => showWheel; set => showWheel = value; }
-        //public WheelPositionType WheelPosition { get => wheelPosition; set => wheelPosition = value; }
-        //public int WheelSize { get => wheelSize; set => wheelSize = value; }
+        public GaugeType ShowGauges { get; set; } = GaugeType.CLUTCH | GaugeType.BRAKE | GaugeType.THROTTLE;
+        public bool AlwaysOnTop { get; set; } = false;
     }
 }

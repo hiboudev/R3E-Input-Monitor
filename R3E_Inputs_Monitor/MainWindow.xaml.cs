@@ -1,5 +1,6 @@
 ﻿using da2mvc.core.events;
 using da2mvc.core.injection;
+using da2mvc.core.view;
 using R3E_Inputs_Monitor.application.command;
 using R3E_Inputs_Monitor.display;
 using R3E_Inputs_Monitor.r3e;
@@ -13,7 +14,7 @@ namespace R3E_Inputs_Monitor
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IEventDispatcher
+    public partial class MainWindow : Window, IEventDispatcher, IView
     {
         /*
          * TODO
@@ -22,6 +23,8 @@ namespace R3E_Inputs_Monitor
          * 
          */
         public event EventHandler MvcEventHandler;
+        public event EventHandler Disposed;
+
         public static readonly int EVENT_OPEN_PREFERENCES = EventId.New();
 
         public MainWindow()
@@ -59,6 +62,11 @@ namespace R3E_Inputs_Monitor
             }
             else if (e.Key == Key.Escape)
                 Application.Current.Shutdown();
+        }
+
+        public void Dispose()
+        {
+            Disposed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

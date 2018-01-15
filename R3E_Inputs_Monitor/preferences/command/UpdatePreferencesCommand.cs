@@ -12,7 +12,6 @@ namespace R3E_Inputs_Monitor.preferences.command
 {
     class UpdatePreferencesCommand : ICommand, IEventDispatcher
     {
-
         public event EventHandler MvcEventHandler;
         public static readonly int EVENT_PREFERENCES_UPDATED = EventId.New();
         private readonly PreferencesChangeEventArgs args;
@@ -26,15 +25,13 @@ namespace R3E_Inputs_Monitor.preferences.command
 
         public void Execute()
         {
-            //preferences.GaugeThickness = args.GaugeThickness;
             preferences.ShowGauges = args.ShowGauges;
+            preferences.AlwaysOnTop = args.AlwaysOnTop;
             Properties.Settings.Default.showGauges = (int)args.ShowGauges;
+            Properties.Settings.Default.alwaysOnTop = args.AlwaysOnTop;
             Properties.Settings.Default.Save();
-            //preferences.ShowWheel = args.ShowWheel;
-            //preferences.WheelPosition = args.WheelPosition;
-            //preferences.WheelSize = args.WheelSize;
 
-            DispatchEvent(new BaseEventArgs(EVENT_PREFERENCES_UPDATED));
+            DispatchEvent(new PreferencesModelEventArgs(EVENT_PREFERENCES_UPDATED, preferences));
         }
 
         public void DispatchEvent(BaseEventArgs args)

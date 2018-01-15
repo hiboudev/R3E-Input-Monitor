@@ -12,21 +12,14 @@
 
     <StackPanel>
         <Label FontWeight="DemiBold">Show:</Label>
-        <StackPanel>
+        <StackPanel Margin="10,0,0,0">
             <CheckBox Name="showClutch">Clutch pedal</CheckBox>
             <CheckBox Name="showBrake">Brake pedal</CheckBox>
             <CheckBox Name="showThrottle">Throttle pedal</CheckBox>
-            <!--CheckBox Name="showWheel">Wheel</-->
         </StackPanel>
 
-        <!--Label FontWeight="DemiBold">Wheel position:</>
-        <ComboBox Name="wheelPosition" />
 
-        <Label FontWeight="DemiBold">Wheel size:</Label>
-        <DockPanel>
-            <TextBox Text="{Binding ElementName=wheelSize, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Right" Width="40" />
-            <Slider Name="wheelSize" Minimum="20" Maximum="1163" TickFrequency="1" IsSnapToTickEnabled="True" />
-        </DockPanel-->
+        <CheckBox Name="alwaysOnTop" Margin="0,10,0,0">Always on top</CheckBox>
         <Button Name="okButton" Margin="0,20,0,0" Padding="6,0,6,0" HorizontalAlignment="Right">Save preferences</Button>
     </StackPanel>
     

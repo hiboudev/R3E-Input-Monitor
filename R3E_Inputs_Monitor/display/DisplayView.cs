@@ -21,7 +21,6 @@ namespace R3E_Inputs_Monitor.display
         private float clutch = .5f;
         private float brake = .5f;
         private float throttle = .5f;
-        //private BitmapSource wheel;
         private readonly PreferencesModel preferences;
 
         public event EventHandler Disposed;
@@ -30,45 +29,13 @@ namespace R3E_Inputs_Monitor.display
         {
             this.preferences = preferences;
             InitBrushes();
-            //PrepareWheelBitmap();
         }
-
-        //private void PrepareWheelBitmap()
-        //{
-        //    Debug.WriteLine("Preparing wheel bitmap");
-
-        //    BitmapImage source = new BitmapImage(new Uri(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"_graphical_assets\wheel.png")));
-
-        //    double sourceRatio = (double)source.PixelWidth / source.PixelHeight;
-        //    Size newSize = new Size(preferences.WheelSize, (int)(preferences.WheelSize / sourceRatio));
-
-        //    var group = new DrawingGroup();
-        //    RenderOptions.SetBitmapScalingMode(group, BitmapScalingMode.HighQuality);
-        //    group.Children.Add(new ImageDrawing(source, new Rect(new Point(), newSize)));
-
-        //    var drawingVisual = new DrawingVisual();
-        //    using (var drawingContext = drawingVisual.RenderOpen())
-        //    {
-        //        drawingContext.DrawDrawing(group);
-        //    }
-
-        //    var resizedImage = new RenderTargetBitmap(
-        //        (int)newSize.Width, (int)newSize.Height,
-        //        source.DpiX, source.DpiY, PixelFormats.Default);
-
-        //    resizedImage.Render(drawingVisual);
-
-        //    wheel = resizedImage;
-        //}
 
         public void SetValues(Single clutch, Single brake, Single throttle)
         {
             this.clutch = clutch == -1 ? 0 : clutch;
             this.brake = brake == -1 ? 0 : brake;
             this.throttle = throttle == -1 ? 0 : throttle;
-
-            //if (preferences.WheelSize != wheel.PixelWidth)
-            //    PrepareWheelBitmap();
 
             InvalidateVisual();
         }
@@ -116,8 +83,6 @@ namespace R3E_Inputs_Monitor.display
             {
                 drawingContext.DrawRectangle(throttleBrush, null, new Rect(gaugeX, RenderSize.Height - throttleHeight, gaugeThickness, throttleHeight));
             }
-            
-            //drawingContext.DrawImage(wheel, new Rect(0, 0, wheel.PixelWidth, wheel.PixelHeight));
         }
 
         public void Dispose()

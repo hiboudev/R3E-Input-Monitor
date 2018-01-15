@@ -13,9 +13,9 @@
 
     <!--AllowsTransparency="True"  -->
     
-    <Window.Background>
+    <!--Window.Background>
         <SolidColorBrush Opacity="0.5" Color="White"/>
-    </Window.Background>
+    </-->
 
     <DockPanel>
         <view:AppView ViewType="{x:Type display:DisplayView}" x:Name="view" />

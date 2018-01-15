@@ -20,6 +20,7 @@ namespace R3E_Inputs_Monitor.preferences.command
         public void Execute()
         {
             preferences.ShowGauges = (GaugeType)Properties.Settings.Default.showGauges;
+            preferences.AlwaysOnTop = Properties.Settings.Default.alwaysOnTop;
         }
     }
 }

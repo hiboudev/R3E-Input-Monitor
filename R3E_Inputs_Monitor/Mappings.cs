@@ -23,7 +23,7 @@ namespace R3E_Inputs_Monitor
             initialized = true;
 
             if (mainWindow != null)
-                Injector.MapInstance(mainWindow);
+                Injector.MapViewInstance<MainWindow, MainWindowMediator>(mainWindow);
 
             Injector.MapType<R3eApiSocket>(true);
             Injector.MapType<PreferencesModel>(true);

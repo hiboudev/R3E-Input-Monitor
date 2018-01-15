@@ -10,19 +10,13 @@ namespace R3E_Inputs_Monitor.preferences.events
 {
     class PreferencesChangeEventArgs : BaseEventArgs
     {
-        public PreferencesChangeEventArgs(int eventId, /*int gaugeThickness, */GaugeType showGauges/*, bool showWheel, WheelPositionType wheelPosition, int wheelSize*/) : base(eventId)
+        public PreferencesChangeEventArgs(int eventId, GaugeType showGauges, bool alwaysOnTop) : base(eventId)
         {
-            //GaugeThickness = gaugeThickness;
             ShowGauges = showGauges;
-            //ShowWheel = showWheel;
-            //WheelPosition = wheelPosition;
-            //WheelSize = wheelSize;
+            AlwaysOnTop = alwaysOnTop;
         }
 
-        //public int GaugeThickness { get; }
         public GaugeType ShowGauges { get; }
-        //public bool ShowWheel { get; }
-        //public WheelPositionType WheelPosition { get; }
-        //public int WheelSize { get; }
+        public bool AlwaysOnTop { get; }
     }
 }

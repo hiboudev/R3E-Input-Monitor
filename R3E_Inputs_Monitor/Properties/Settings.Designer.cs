@@ -34,5 +34,17 @@ namespace R3E_Inputs_Monitor.Properties {
                 this["showGauges"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool alwaysOnTop {
+            get {
+                return ((bool)(this["alwaysOnTop"]));
+            }
+            set {
+                this["alwaysOnTop"] = value;
+            }
+        }
     }
 }

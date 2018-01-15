@@ -30,7 +30,7 @@
     <PublisherName>ChatCureuil</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -112,11 +112,13 @@
     <Compile Include="application\view\AppView.cs" />
     <Compile Include="display\DisplayMediator.cs" />
     <Compile Include="display\DisplayView.cs" />
+    <Compile Include="MainWindowMediator.cs" />
     <Compile Include="Mappings.cs" />
     <Compile Include="preferences\command\LoadPreferencesCommand.cs" />
     <Compile Include="preferences\command\OpenPreferencesCommand.cs" />
     <Compile Include="preferences\command\UpdatePreferencesCommand.cs" />
     <Compile Include="preferences\events\PreferencesChangeEventArgs.cs" />
+    <Compile Include="preferences\events\PreferencesModelEventArgs.cs" />
     <Compile Include="preferences\model\GaugeType.cs" />
     <Compile Include="preferences\model\PreferencesModel.cs" />
     <Compile Include="preferences\model\WheelPositionType.cs" />
